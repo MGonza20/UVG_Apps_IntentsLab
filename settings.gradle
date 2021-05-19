@@ -1,0 +1,2 @@
+rootProject.name = "IntentsLab_UVG"
+include ':app'
