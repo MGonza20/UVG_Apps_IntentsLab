@@ -30,7 +30,7 @@ class MainActivity2 : AppCompatActivity() {
         btnRegresar.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity::class.java)
 
-            
+            //ASIGNAR VALORES A VALOR1 y VALOR2
 
             intent.putExtra("valor", "Hola mundo")
             intent.putExtra("valor2", "Prueba")
