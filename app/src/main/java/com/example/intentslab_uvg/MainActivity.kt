@@ -11,30 +11,51 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnSuma.setOnClickListener{
 
-            /** INFO VALIOSA
+        btnSuma.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("valor", "A sumaar")
 
-            intent.putExtra("valor", "Hola mundo")
+            /**
             intent.putExtra("valor2", "Prueba")
+            intent.putExtra("valor3", "asdasd")
             **/
 
-            //intent.putExtra("valor3", "datos random")
             //startActivity(intent)
             //finish()
 
             startActivityForResult(intent, 1)
         }
+
+        btnResta.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("valor2", "A restar")
+            startActivityForResult(intent, 1)
+        }
+
+        btnMulti.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("valor3", "A multiplicaaaaaaaaaar")
+            startActivityForResult(intent, 1)
+        }
+
+        btnDivi.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("valor4", "A dividiiiiiiiiiiiiiiir")
+            startActivityForResult(intent, 1)
+        }
+
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(resultCode == RESULT_OK){
-            if(requestCode == 1){
+        if (resultCode == RESULT_OK){
+            if (requestCode == 1){
                 val bundle = data?.extras
-                if(bundle != null){
+                if (bundle != null){
                     val resultado = bundle.getString("resultado1")
                     Toast.makeText(this, resultado, Toast.LENGTH_SHORT).show()
                 }

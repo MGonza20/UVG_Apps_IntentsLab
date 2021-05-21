@@ -98,6 +98,11 @@
             android:layout_height="2dp" />
         !-->
 
+        <TextView
+            android:id="@+id/tvRESULTT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
 
