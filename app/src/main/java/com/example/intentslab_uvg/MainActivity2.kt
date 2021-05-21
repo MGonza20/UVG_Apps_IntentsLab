@@ -14,54 +14,84 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+
+        val answerBack: String
         val bundle = intent.extras
 
         if (bundle != null) {
             if(intent.hasExtra("valor")){
-                
 
+                //val suma: Int = valor1.text.toString().toInt()+valor2.text.toString().toInt()
+
+                    /**
+                val valor1 = Integer.parseInt(etValor1.text.toString())
+                val valor2 = Integer.parseInt(etValor2.text.toString())
+                val suma = valor1+valor2
+                **/
+
+                val valor1:Int = (etValor1.text.toString()).toInt()
+                val valor2:Int = (etValor2.text.toString()).toInt()
+                val suma = (valor1+valor2).toString()
+
+                answerBack = suma
                 val texto = bundle.getString("valor")
                 tvRESULTT.text = texto
+
+                btnRegresar.setOnClickListener {
+                    val intent: Intent = Intent()
+                    intent.putExtra("resultado1", answerBack)
+                    setResult(RESULT_OK, intent)
+                    finish()
+                }
+
             }else if (intent.hasExtra("valor2")){
                 val texto = bundle.getString("valor2")
                 tvRESULTT.text = texto
+                answerBack = "Resultado resta"
+
+                btnRegresar.setOnClickListener {
+                    val intent: Intent = Intent()
+                    intent.putExtra("resultado1", answerBack)
+                    setResult(RESULT_OK, intent)
+                    finish()
+                }
+
             }else if (intent.hasExtra("valor3")){
                 val texto = bundle.getString("valor3")
                 tvRESULTT.text = texto
+                answerBack = "Result multi"
+
+                btnRegresar.setOnClickListener {
+                    val intent: Intent = Intent()
+                    intent.putExtra("resultado1", answerBack)
+                    setResult(RESULT_OK, intent)
+                    finish()
+                }
+
             }else if (intent.hasExtra("valor4")){
                 val texto = bundle.getString("valor4")
                 tvRESULTT.text = texto
+                answerBack = "Result divi"
+
+                btnRegresar.setOnClickListener {
+                    val intent: Intent = Intent()
+                    intent.putExtra("resultado1", answerBack)
+                    setResult(RESULT_OK, intent)
+                    finish()
+                }
             }
 
 
-
-
-            //txtTexto.text = texto
-
-            /**
-            val valor2 = bundle.getString("valor2")
-            Toast.makeText(this, valor2, Toast.LENGTH_SHORT).show()
-            **/
-
-            /*val valor3 = bundle.getString("valor3")
-
-            if (valor3 != null){
-                Toast.makeText(this, valor3, Toast.LENGTH_SHORT).show()
-            }*/
-
-            /**
-            val valor3 = bundle.getString("valor3","no hay valor")
-            Toast.makeText(this, valor3, Toast.LENGTH_SHORT).show()
-            **/
-
         }
 
+        /**
         btnRegresar.setOnClickListener {
             val intent: Intent = Intent()
-            intent.putExtra("resultado1", "Valor desde pantalla 2")
+            intent.putExtra("resultado1", answerBack)
             setResult(RESULT_OK, intent)
             finish()
         }
+        **/
 
     }
 }

@@ -57,7 +57,9 @@ class MainActivity : AppCompatActivity() {
                 val bundle = data?.extras
                 if (bundle != null){
                     val resultado = bundle.getString("resultado1")
-                    Toast.makeText(this, resultado, Toast.LENGTH_SHORT).show()
+                    tvResultado.text = resultado
+
+                //Toast.makeText(this, resultado, Toast.LENGTH_SHORT).show()
                 }
             }
         }
