@@ -15,41 +15,43 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
 
-        val answerBack: String
+        var answerBack: String
         val bundle = intent.extras
 
         if (bundle != null) {
             if(intent.hasExtra("valor")){
 
-                //val suma: Int = valor1.text.toString().toInt()+valor2.text.toString().toInt()
-
-                    /**
-                val valor1 = Integer.parseInt(etValor1.text.toString())
-                val valor2 = Integer.parseInt(etValor2.text.toString())
-                val suma = valor1+valor2
-                **/
-
-                val valor1:Int = (etValor1.text.toString()).toInt()
-                val valor2:Int = (etValor2.text.toString()).toInt()
-                val suma = (valor1+valor2).toString()
-
-                answerBack = suma
                 val texto = bundle.getString("valor")
                 tvRESULTT.text = texto
 
                 btnRegresar.setOnClickListener {
+
+                    val valor1 = Integer.parseInt(etValor1.text.toString())
+                    val valor2 = Integer.parseInt(etValor2.text.toString())
+                    val suma = valor1+valor2
+
+                    answerBack = "El resultado es: \n" + suma
+
                     val intent: Intent = Intent()
                     intent.putExtra("resultado1", answerBack)
                     setResult(RESULT_OK, intent)
                     finish()
                 }
 
-            }else if (intent.hasExtra("valor2")){
+            }
+            else if (intent.hasExtra("valor2")){
+
                 val texto = bundle.getString("valor2")
                 tvRESULTT.text = texto
-                answerBack = "Resultado resta"
 
                 btnRegresar.setOnClickListener {
+
+                    val valor1 = Integer.parseInt(etValor1.text.toString())
+                    val valor2 = Integer.parseInt(etValor2.text.toString())
+                    val resta = valor1 - valor2
+
+                    answerBack = "El resultado es: \n" + resta
+
                     val intent: Intent = Intent()
                     intent.putExtra("resultado1", answerBack)
                     setResult(RESULT_OK, intent)
@@ -57,11 +59,18 @@ class MainActivity2 : AppCompatActivity() {
                 }
 
             }else if (intent.hasExtra("valor3")){
+
                 val texto = bundle.getString("valor3")
                 tvRESULTT.text = texto
-                answerBack = "Result multi"
 
                 btnRegresar.setOnClickListener {
+
+                    val valor1 = Integer.parseInt(etValor1.text.toString())
+                    val valor2 = Integer.parseInt(etValor2.text.toString())
+                    val multiply = valor1 * valor2
+
+                    answerBack = "El resultado es: \n" + multiply
+
                     val intent: Intent = Intent()
                     intent.putExtra("resultado1", answerBack)
                     setResult(RESULT_OK, intent)
@@ -69,29 +78,24 @@ class MainActivity2 : AppCompatActivity() {
                 }
 
             }else if (intent.hasExtra("valor4")){
+
                 val texto = bundle.getString("valor4")
                 tvRESULTT.text = texto
-                answerBack = "Result divi"
 
                 btnRegresar.setOnClickListener {
+
+                    val valor1  = Integer.parseInt(etValor1.text.toString())
+                    val valor2 = Integer.parseInt(etValor2.text.toString())
+                    val divide = valor1 / valor2
+
+                    answerBack = "El resultado es: \n" + divide
+
                     val intent: Intent = Intent()
                     intent.putExtra("resultado1", answerBack)
                     setResult(RESULT_OK, intent)
                     finish()
                 }
             }
-
-
         }
-
-        /**
-        btnRegresar.setOnClickListener {
-            val intent: Intent = Intent()
-            intent.putExtra("resultado1", answerBack)
-            setResult(RESULT_OK, intent)
-            finish()
-        }
-        **/
-
     }
 }

@@ -14,34 +14,25 @@ class MainActivity : AppCompatActivity() {
 
         btnSuma.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("valor", "A sumaar")
-
-            /**
-            intent.putExtra("valor2", "Prueba")
-            intent.putExtra("valor3", "asdasd")
-            **/
-
-            //startActivity(intent)
-            //finish()
-
+            intent.putExtra("valor", "Ingrese datos para sumarlos")
             startActivityForResult(intent, 1)
         }
 
         btnResta.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("valor2", "A restar")
+            intent.putExtra("valor2", "Ingrese datos para restarlos")
             startActivityForResult(intent, 1)
         }
 
         btnMulti.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("valor3", "A multiplicaaaaaaaaaar")
+            intent.putExtra("valor3", "Ingrese datos para multiplicarlos")
             startActivityForResult(intent, 1)
         }
 
         btnDivi.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("valor4", "A dividiiiiiiiiiiiiiiir")
+            intent.putExtra("valor4", "Ingrese datos para dividirlos")
             startActivityForResult(intent, 1)
         }
 
@@ -57,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 val bundle = data?.extras
                 if (bundle != null){
                     val resultado = bundle.getString("resultado1")
+
                     tvResultado.text = resultado
 
                 //Toast.makeText(this, resultado, Toast.LENGTH_SHORT).show()
