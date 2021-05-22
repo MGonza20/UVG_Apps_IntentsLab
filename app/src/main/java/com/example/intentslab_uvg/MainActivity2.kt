@@ -86,6 +86,7 @@ class MainActivity2 : AppCompatActivity() {
 
                     val valor1  = Integer.parseInt(etValor1.text.toString())
                     val valor2 = Integer.parseInt(etValor2.text.toString())
+
                     val divide = valor1 / valor2
 
                     answerBack = "El resultado es: \n" + divide
